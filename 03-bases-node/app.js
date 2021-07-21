@@ -10,7 +10,7 @@ const mutiplication = (number) => {
     return output;
 }
 
-const base = 5
+const base = 8;
 
 console.clear();
 console.log('========================');
@@ -19,9 +19,5 @@ console.log('========================');
 
 const output = mutiplication(base);
 
-fs.writeFile(`tabla-${base}.txt`, output, (err) => {
-    if (err) {
-        return console.log('imposible guardar tabla de multiplicar.');
-    }
-    console.log('tabla de multiplicar guardada con éxito.');
-});
+fs.writeFileSync(`tabla-${base}.txt`, output);
+console.log(`tabla del ${base} creada.`);
