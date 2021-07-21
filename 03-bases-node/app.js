@@ -1,7 +1,13 @@
+const fs = require('fs');
+
 const mutiplication = (number) => {
+    let output = '';
+
     for (let i = 1; i <= 10; i++) {
-        console.log(`${number} x ${i} = ${number * i}`);
+        output += `${number} x ${i} = ${number * i} \n`;
     }
+
+    return output;
 }
 
 const base = 5
@@ -11,4 +17,11 @@ console.log('========================');
 console.log(`   Tabla del: ${base}   `);
 console.log('========================');
 
-mutiplication(2);
+const output = mutiplication(base);
+
+fs.writeFile(`tabla-${base}.txt`, output, (err) => {
+    if (err) {
+        return console.log('imposible guardar tabla de multiplicar.');
+    }
+    console.log('tabla de multiplicar guardada con éxito.');
+});
