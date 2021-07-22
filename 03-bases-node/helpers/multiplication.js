@@ -20,7 +20,7 @@ const createMultiplicationFile = async (base = 1, list = false, stop = 10) => {
         }
 
         const fileName = `tabla-${base}.txt`;
-        fs.writeFileSync(fileName, output);
+        fs.writeFileSync(`./output/${fileName}`, output);
 
         return fileName;
 
