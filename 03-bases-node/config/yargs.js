@@ -11,6 +11,12 @@ const argv = require('yargs')
         default: false,
         describe: 'Imprime la tabla en la consola.'
     })
+    .option('s',  {
+        alias: 'stop',
+        type: 'number',
+        default: 10,
+        describe: 'Limite de la multiplicación.'
+    })
     .check((argv, options) => {
         if (isNaN(argv.b)) {
             throw 'La base debe ser númerico.';
