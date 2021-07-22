@@ -1,17 +1,19 @@
 const fs = require('fs');
 
+require('colors');
+
 const createMultiplicationFile = async (base = 1, list = false) => {
     let output = '';
 
     try {
         for (let i = 1; i <= 10; i++) {
-            output += `${base} x ${i} = ${base * i} \n`;
+            output += `${base}  ${'x'.blue}  ${i} ${'='.green} ${base * i} \n`;
         }
 
         if (list) {
-            console.log('========================');
-            console.log('    Tabla del:', base);
-            console.log('========================');
+            console.log('========================'.red);
+            console.log(`     Tabla del: ${base}`.magenta);
+            console.log('========================'.red);
             console.log(output);
         }
 
